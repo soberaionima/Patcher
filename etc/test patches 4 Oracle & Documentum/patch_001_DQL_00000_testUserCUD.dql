@@ -1,0 +1,15 @@
+create dm_user object
+ set user_name = 'patcher_test_user@test.test',
+ set user_login_name = 'patcher_test_user@test.test',
+ set user_source = 'inline password',
+ set user_password = 'patcher_test_user@test.test',
+ set user_address = 'patcher_test_user@test.test'
+go
+
+update dm_user object set user_address = 'patcher_test_user@fake.fake' where user_name = 'patcher_test_user@test.test'
+go
+
+delete dm_user object
+where user_name = 'patcher_test_user@test.test'
+go
+
